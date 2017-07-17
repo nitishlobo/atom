@@ -1,0 +1,206 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+@import "octicon-utf-codes.less";
+
+.state-display {
+    display:inline-block;
+    float:right;
+}
+.state-display>span {
+    padding: 4px;
+}
+
+
+.gdb-cli {
+    margin: 4px;
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    pre, code {
+        background: transparent;
+        padding: 0;
+        white-space: pre-wrap;
+    }
+    .gdb-cli-input {
+        white-space: nowrap;
+        display: flex;
+        input {
+            flex: 1;
+            border-color: transparent;
+            background: inherit;
+            font-family: monospace;
+            border: 0;
+            padding: 0 0 0 6px;
+            color: @text-color-highlight;
+        }
+    }
+}
+
+.atom-text-editor, :host, atom-text-editor, atom-text-editor.editor {
+  .line.gdb-frame {
+    border-radius: @component-border-radius;
+    background: fade(@background-color-warning, 20%);
+  }
+
+  .line-number.gdb-frame {
+		position: relative;
+		color: @text-color-warning;
+		overflow: hidden;
+		border-radius: @component-border-radius;
+		&:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 0px;
+			margin-top: -100px;
+			border-left: 100px solid fade(@background-color-warning, 50%);
+			border-top: 100px solid transparent;
+			border-bottom: 100px solid transparent;
+		}
+	}
+
+  .line-number.gdb-bkpt .icon-right {
+    visibility: visible;
+
+    &:before {
+      content: @stop;
+      color: @text-color-error;
+      font-weight: bold;
+    }
+  }
+}
+
+table {
+    line-height: 2em;
+    width: 100%;
+}
+th, td {
+    padding: 0 0.5em 0 0.5em;
+    white-space: nowrap;
+}
+td.expand-column {
+    padding-left: 1em;
+    span:first-child {
+        padding-left: 1em;
+        position: relative;
+    }
+}
+td span.delete::before {
+    font-family: 'Octicons Regular';
+    content: @x;
+}
+
+.var-watch-view {
+    .var-watch-tree {
+        padding-bottom: 2px;
+        background-color: @tree-view-background-color;
+        border: 1px solid @tree-view-border-color;
+    }
+
+    tr.collapsable td.expand-column span:first-child::before {
+        font-family: 'Octicons Regular';
+        content: @chevron-down;
+        position: absolute;
+        left: 0;
+    }
+
+    tr.collapsable.collapsed td.expand-column span:first-child::before {
+        content: @chevron-right;
+    }
+
+    tr.out-of-scope {
+        font-style: oblique;
+        color: @text-color-subtle;
+    }
+
+    input#value {
+        width: 100%;
+    }
+    input#value.changed {
+        color: @text-color-error;
+    }
+}
+
+.gdb-config-view {
+    input.error,select.error {
+        color: @text-color-error;
+    }
+}
+
+.gdb-resizeable {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    .gdb-resize-grip {
+        position: absolute;
+        z-index: 1000;
+    }
+    .gdb-resize-grip.left,.resize-grip.right {
+        cursor: ew-resize;
+        width: 8px;
+        height: 100%;
+    }
+    .gdb-resize-grip.top,.resize-grip.bottom {
+        cursor: ns-resize;
+        height: 8px;
+        width: 100%;
+    }
+    .gdb-resize-grip.top { top: -5px; }
+    .gdb-resize-grip.bottom { bottom: -5px; }
+    .gdb-resize-grip.left { left: -5px; }
+    .gdb-resize-grip.right { right: -5px; }
+}
+
+#backtrace .selected::before {
+    background-color: @background-color-highlight;
+}
+
+#backtrace .locals {
+    font-family: monospace;
+}
+
+.debug-panel {
+
+  .btn-toolbar {
+    padding: 9px 0 8px 0;
+  }
+
+}
+
+.debug-subpanel {
+    border-bottom: 1px solid black;
+    position: relative;
+    .header {
+        color: #D9DBDE;
+        padding-left: 2em;
+        line-height: 2em;
+        background-color: #303337;
+        cursor: default;
+        border: solid #111314;
+        border-width: 1px 0 1px 0;
+        font-weight: bold;
+    }
+    .header::before {
+        font-family: 'Octicons Regular';
+        content: @chevron-down;
+        position: absolute;
+        left: 1em;
+    }
+    .header.collapsed::before {
+        content: @chevron-right;
+    }
+}
+
+#break-list {
+    width: 100%;
+    line-height: 2em;
+    td.expand-column {
+        padding-left: 0;
+    }
+}

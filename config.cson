@@ -1,0 +1,49 @@
+"*":
+  "":
+    source:
+      gfm:
+        editor:
+          softWrap: true
+      python:
+        editor:
+          tabLength: 4
+  "bracket-matcher":
+    autocompleteBrackets: false
+  core:
+    disabledPackages: [
+      "linter-gcc"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".pioenvs"
+      ".piolibdeps"
+      ".clang_complete"
+      ".gcc-flags.json"
+    ]
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "bb14e937-b40d-4f9e-83ec-65fa934ef6c4"
+  "file-icons":
+    coloured: false
+  linter:
+    lintOnOpen: false
+  "linter-ui-default":
+    panelHeight: 69
+    useBusySignal: false
+  "platformio-ide":
+    advanced:
+      checkAuthOnStartup: false
+    autoUpdateIDE: false
+    showPIOHome: false
+  "tool-bar":
+    position: "Left"
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
